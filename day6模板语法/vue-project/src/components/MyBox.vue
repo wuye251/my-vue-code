@@ -1,5 +1,13 @@
+<script setup>
+
+const props = defineProps(["a","b","c"])
+console.log(props.a)
+console.log(props.b)
+console.log(props.c)
+</script>
+
 <template>
-    <div class="box1">box中的box1</div>
+    <h1>{{ props.a }}</h1>
 </template>
 
 <style scoped>
