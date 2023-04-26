@@ -1,12 +1,15 @@
 <script setup>
-  import mybox from './components/mybox.vue';
-  import {ref} from "vue"
-  const count = ref(0)
+  import mybutton from './components/mybutton.vue'
+  import A from "./components/A.vue"
 </script>
 
 <template>
-  <h1>哈哈哈</h1>
-  <mybox :count="count"></mybox>
-  <mybox :count="count"></mybox>
-  <button @click="count++">父组件+1</button>
+  <h1>App组件</h1>
+  <mybutton>
+    <!-- 通过slotProps接收到插槽传出的值 -->
+    <template #bbb="slotProps">
+      <!-- 将text内容传给A子组件 -->
+      <A :text="slotProps.text"></A>
+    </template>
+  </mybutton>
 </template>
